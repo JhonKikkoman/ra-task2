@@ -57,9 +57,14 @@ export default function Portfolio() {
         category: "Flayers"
     }]);
 
-    const SelectFilter = (select) => {
+    const selectFilter = (select) => {
         setSelect(select.target.textContent);
-        const dataFilter = currentData.filter((p) => p.category === select);
+        const dataFilter = currentData.filter((p) => {
+            if(p.category === currentSelect) {
+                return p;
+            }
+        });
+        console.log(dataFilter)
         setData(dataFilter);
     }
     
@@ -68,7 +73,7 @@ export default function Portfolio() {
             <Toolbar
                 filters={["All", "Websites", "Flayers", "Business Cards"]}
                 selected={currentSelect}
-                onSelectFilter={SelectFilter}
+                onSelectFilter={selectFilter}
             />
             <ProjectList data={currentData} />
         </>
