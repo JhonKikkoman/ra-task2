@@ -1,12 +1,10 @@
 import './App.css';
-import Toolbar from './components/Toolbar/Toolbar';
-import Portfolio from './components/portfolio/portfolio';
-
+import Portfolio from './components/portfolio/Portfolio';
 
 function App() {
   return (
     <div className='container'>
-      <Toolbar  />
+      <Portfolio />
     </div>
   );
 }

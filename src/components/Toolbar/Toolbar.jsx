@@ -1,10 +1,9 @@
-
-
-export default function Toolbar ( { props } ) {
+export default function Toolbar(props) {
     const filters = props.filters;
     return (
-    <div>
-        {filters.map((p) => <button className="btn">{p}</button>)}
-    </div>
+        <div className="container_btn">
+            {filters.map((p) => <div className={props.selected === p ? "btn btn_active" : "btn"}
+                onClick={props.onSelectFilter}>{p}</div>)}
+        </div>
     );
 };
