@@ -3,8 +3,8 @@ import ProjectList from "../ProjectList"
 import { useState } from "react";
 
 export default function Portfolio() {
-    const { currentSelect, setSelect } = useState('All');
-    const { currentData, setData } = useState([{
+    const [ currentSelect, setSelect ] = useState('All');
+    const [ currentData, setData ] = useState([{
         img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/mon.jpg",
         category: "Business Cards"
     }, {
@@ -62,7 +62,7 @@ export default function Portfolio() {
         const dataFilter = currentData.filter((p) => p.category === select);
         setData(dataFilter);
     }
-
+    
     return (
         <>
             <Toolbar
@@ -70,7 +70,7 @@ export default function Portfolio() {
                 selected={currentSelect}
                 onSelectFilter={SelectFilter}
             />
-            {/* <ProjectList data={currentData} /> */}
+            <ProjectList data={currentData} />
         </>
     );
 }
