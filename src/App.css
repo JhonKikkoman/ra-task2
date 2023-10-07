@@ -1,7 +1,11 @@
+.container {
+  padding: 0 80px 5px;
+}
+
 .container_btn {
   margin-top: 20px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 10px;
   cursor: pointer;
 }
@@ -15,4 +19,12 @@
 .btn.btn_active {
   background: #7d7469b5;
   color: blue;
+}
+
+.container_img {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-content: stretch;
+  margin: 10px auto 0;
 }
